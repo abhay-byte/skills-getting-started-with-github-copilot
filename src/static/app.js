@@ -20,16 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
-        // Create participants list HTML (pretty and always visible)
+
+        // Participants section (pretty bulleted list)
         let participantsHTML = `
-          <div class="participants-section" style="margin-top: 16px; padding: 12px; background: linear-gradient(90deg, #e3ecfa 0%, #f5faff 100%); border-radius: 6px; box-shadow: 0 1px 4px rgba(60,90,180,0.06);">
-            <strong style="color: #3949ab; font-size: 1.08em; letter-spacing: 0.5px;">Participants:</strong>
+          <div class="participants-section">
+            <strong>Participants:</strong>
             ${
               details.participants && details.participants.length > 0
-                ? `<ul class="participants-list" style="margin-top: 10px; margin-left: 22px; color: #2d3a4a; font-size: 1em;">
-                    ${details.participants.map(p => `<li style="padding: 3px 0; list-style-type: disc;">${p}</li>`).join('')}
+                ? `<ul class="participants-list">
+                    ${details.participants.map(p => `<li>${p}</li>`).join('')}
                   </ul>`
-                : `<span class="no-participants" style="color: #888; font-style: italic; margin-left: 10px;">No one signed up yet.</span>`
+                : `<span class="no-participants">No one signed up yet.</span>`
+
             }
           </div>
         `;
