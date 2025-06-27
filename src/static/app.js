@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
+
         // Participants section (pretty bulleted list)
         let participantsHTML = `
           <div class="participants-section">
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     ${details.participants.map(p => `<li>${p}</li>`).join('')}
                   </ul>`
                 : `<span class="no-participants">No one signed up yet.</span>`
+
             }
           </div>
         `;
